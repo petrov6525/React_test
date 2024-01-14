@@ -1,9 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
+import {Login} from "./pages/login/login";
+import {Provider} from "react-redux";
+import {store} from "./store/store";
+import {RouterProvider} from "react-router-dom";
+import {defaultRouter} from "./routers/defaultRouter";
 
 function App() {
   return (
-    <div className="App">
+      <Provider store={store}>
+        <RouterProvider router={defaultRouter} />
+      </Provider>
+    /*<div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -18,7 +26,7 @@ function App() {
           Learn React
         </a>
       </header>
-    </div>
+    </div>*/
   );
 }
 
